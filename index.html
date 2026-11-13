@@ -7,7 +7,7 @@
     <meta name="theme-color" content="#09090b">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Pritha das- Portfolio</title>
+    <title>Pritha das - Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -492,7 +492,7 @@
               desc: 'A bold, culturally rich brand identity and packaging design. Click to view the complete visual presentation on Behance.',
               tags: ['Featured Project', 'Packaging Design'], url: 'https://www.behance.net/gallery/249896531/Dragon-Tea-Packaging-Design' },
             { grad: 'grad-2', cat: 'ui-ux', span: 'lg:col-span-7', big: true, title: 'Fintech UI/UX Redesign',
-              desc: 'A conceptual ovemctaul of a major financial service app, focusing on accessibility and modern aesthetics.',
+              desc: 'A conceptual overhaul of a major financial service app, focusing on accessibility and modern aesthetics.',
               tags: ['App Design', 'Case Study'], url: 'https://www.behance.net/gallery/204958143/Mobile-financial-serviceapp-design-UXUI' },
             { grad: 'grad-3', cat: 'graphic', span: 'lg:col-span-5', title: 'Real Madrid Social Media Rebrand',
               desc: 'A refreshed social media identity with bold layouts, consistent typography and matchday templates.',
@@ -508,13 +508,13 @@
         const TOOLS = ['Figma', 'After Effects', 'Blender', 'Photoshop', 'Illustrator', 'Premiere Pro', 'Prototyping', 'Branding'];
 
         const SOCIALS = [
-            ['Facebook', 'https://www.facebook.com/prithahossen19', 'facebook', '#1877F2'],
-            ['Messenger', 'http://m.me/prithahossen1207', 'facebook-messenger', '#00B2FF'],
-            ['WhatsApp', 'https://wa.me/qr/NQZPKIPT62C6J1', 'whatsapp', '#25D366'],
-            ['Instagram', '#', 'instagram', '#E1306C'],
-            ['X (Twitter)', '#', 'twitter', '#ffffff'],
-            ['Behance', 'https://www.behance.net/prithahossen', 'behance', '#1769ff'],
-            ['Dribbble', 'https://dribbble.com/prithahossen', 'dribbble', '#ea4c89']
+            ['Facebook', 'https://www.facebook.com/', 'facebook', '#1877F2'],
+            ['Messenger', 'http://m.me/', 'facebook-messenger', '#00B2FF'],
+            ['WhatsApp', 'https://wa.me/qr/', 'whatsapp', '#25D366'],
+            ['Instagram', '#', 'instagram', ''],
+            ['X (Twitter)', '#', 'twitter', ''],
+            ['Behance', 'https://www.behance.net/n', 'behance', '#1769ff'],
+            ['Dribbble', 'https://dribbble.com/', 'dribbble', '#ea4c89']
         ];
 
         const NAV = [
@@ -529,10 +529,10 @@
         const ICON_SHARE = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-5.368m0 5.368l5.662 3.14m-5.662-3.14l5.662-3.14m5.662 3.14a3 3 0 100-5.368 3 3 0 000 5.368z"></path>';
 
         /* ================= RENDER ================= */
-        document.getElementById('marquee-track').innemctTML =
+        document.getElementById('marquee-track').innerHTML =
             [...TOOLS, ...TOOLS].map(t => `<span class="flex items-center gap-12">${t}<span class="w-1 h-1 rounded-full bg-brand-500"></span></span>`).join('');
 
-        document.getElementById('skills-grid').innemctTML = SKILLS.map(s => `
+        document.getElementById('skills-grid').innerHTML = SKILLS.map(s => `
             <div class="glass-panel p-4 md:p-5 rounded-2xl flex items-center gap-4 hover:-translate-y-1 transition-all hover:border-brand-500/50 group cursor-pointer" onclick="scrollToProjectsAndFilter('${s.f}')">
                 <div class="glass-chip w-12 h-12 rounded-full group-hover:bg-brand-500/20 flex items-center justify-center text-brand-500 transition-colors flex-shrink-0">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${s.p}"></path></svg>
@@ -543,7 +543,7 @@
                 </div>
             </div>`).join('');
 
-        document.getElementById('projects-grid').innemctTML = PROJECTS.map((p, i) => `
+        document.getElementById('projects-grid').innerHTML = PROJECTS.map((p, i) => `
             <div class="group glass-panel rounded-[2rem] overflow-hidden cursor-pointer reveal project-card aspect-square hover:border-brand-500/50"
                  data-category="${p.cat}" data-url="${p.url}">
                 <div class="absolute inset-0 ${p.grad} -z-10"></div><div class="absolute inset-0 dots -z-10"></div><span class="card-num absolute top-4 left-6 text-7xl md:text-8xl font-extrabold leading-none select-none -z-10">0${i + 1}</span>
@@ -565,14 +565,14 @@
                 </div>
             </div>`).join('');
 
-        document.getElementById('socials').innemctTML = SOCIALS.map(([n, u, ic, c]) => `
+        document.getElementById('socials').innerHTML = SOCIALS.map(([n, u, ic, c]) => `
             <a href="${u}" target="_blank" rel="noopener" title="${n}" aria-label="${n}"
                class="glass-panel w-12 h-12 rounded-full flex items-center justify-center text-zinc-400 transition-all hover:-translate-y-1"
                onmouseenter="this.style.color='${c}';this.style.borderColor='${c}80'" onmouseleave="this.style.color='';this.style.borderColor=''">
                 <i class="fi fi-brands-${ic} text-lg flex items-center justify-center"></i>
             </a>`).join('');
 
-        document.getElementById('mobile-nav-inner').innemctTML = NAV.map(([id, label, path], i) => `
+        document.getElementById('mobile-nav-inner').innerHTML = NAV.map(([id, label, path], i) => `
             <a href="#${id}" class="mobile-app-link ${i === 0 ? 'active' : ''} flex flex-col items-center gap-1 text-zinc-500 transition-colors w-1/5 pt-1" data-section="${id}">
                 <div class="icon-wrapper"><div class="icon-bg p-1.5 rounded-xl border border-transparent">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="${path}"></path></svg>
@@ -590,7 +590,7 @@
 
         function shareProject(url) {
             if (navigator.share) {
-                navigator.share({ title: 'Pritha das- Project', url }).catch(() => {});
+                navigator.share({ title: 'Pritha Hossen - Project', url }).catch(() => {});
             } else if (navigator.clipboard) {
                 navigator.clipboard.writeText(url).then(() => toast('Link copied'));
             }
@@ -636,7 +636,7 @@
 
         function onScroll() {
             const y = window.scrollY;
-            const max = document.documentElement.scrollHeight - window.innemcteight;
+            const max = document.documentElement.scrollHeight - window.innerHeight;
             progress.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
 
             if (mobileHeader) {
@@ -669,7 +669,7 @@
 
         function reveal() {
             document.querySelectorAll('.reveal').forEach(el => {
-                if (el.getBoundingClientRect().top < window.innemcteight - 80) el.classList.add('active');
+                if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('active');
             });
         }
         window.addEventListener('scroll', onScroll, { passive: true });
@@ -764,7 +764,7 @@
         const esc = s => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
         function renderResults(q) {
-            sResults.innemctTML = '';
+            sResults.innerHTML = '';
             sEmpty.classList.toggle('hidden', !!q);
             if (!q) return;
 
@@ -772,14 +772,14 @@
                 i.title.toLowerCase().includes(q) || (i.desc || '').toLowerCase().includes(q) || i.type.toLowerCase().includes(q));
 
             if (!hits.length) {
-                sResults.innemctTML = `<div class="glass-panel p-6 text-center text-zinc-400 rounded-xl">No results for "<span class="text-white">${esc(q)}</span>"</div>`;
+                sResults.innerHTML = `<div class="glass-panel p-6 text-center text-zinc-400 rounded-xl">No results for "<span class="text-white">${esc(q)}</span>"</div>`;
                 return;
             }
             hits.forEach((item, idx) => {
                 const el = document.createElement('div');
                 el.className = 'glass-panel p-4 rounded-xl cursor-pointer hover:bg-brand-500/10 hover:border-brand-500/30 transition-all flex flex-col gap-1 group animate-fade-in-up';
                 el.style.animationDelay = (idx * 0.05) + 's';
-                el.innemctTML = `
+                el.innerHTML = `
                     <div class="flex justify-between items-center gap-3">
                         <span class="text-white font-medium group-hover:text-brand-400 transition-colors">${esc(item.title)}</span>
                         <span class="text-[10px] uppercase tracking-wider px-2 py-1 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20 whitespace-nowrap">${esc(item.type)}</span>
